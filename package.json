@@ -1,0 +1,38 @@
+{
+  "name": "op-rpg-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 8090 --host",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "start": "npm run build && npx serve dist -s -l 4000",
+    "kill": "kill -9 $(lsof -ti:8090)",
+    "test": "npx tsx test.ts"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "animate.css": "^4.1.1",
+    "axios": "^1.8.1",
+    "bulma": "^1.0.3",
+    "pinia": "^3.0.1",
+    "rpg-awesome": "^0.2.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "serve": "^14.2.4",
+    "tsx": "^4.19.3",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "vue-tsc": "^2.2.4"
+  }
+}
