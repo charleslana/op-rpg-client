@@ -21,3 +21,19 @@ body {
     color: #FAFAFA !important;
     background-color: #222222 !important;
 }
+
+.card {
+    background-color: #393939 !important;
+}
+
+.select select:focus, .input:focus, .textarea:focus, .select select:focus-within, .input:focus-within, .textarea:focus-within, .select select.is-focused, .is-focused.input, .is-focused.textarea {
+    border-color: transparent !important;
+}
+
+.control.has-icons-left .input:focus ~ .icon, .control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon, .control.has-icons-right .select:focus ~ .icon {
+    color: #FAFAFA !important;
+}
+
+.is-fullheight {
+    height: 100% !important;
+}
