@@ -14,12 +14,14 @@
 
 html {
     background-color: #222222 !important;
+    height: 100vh;
 }
 
 body {
     font-family: 'Proxima Nova', serif !important;
     color: #FAFAFA !important;
     background-color: #222222 !important;
+    height: 100vh;
 }
 
 .card {
@@ -35,5 +37,15 @@ body {
 }
 
 .is-fullheight {
-    height: 100% !important;
+    height: 100vh !important;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
 }

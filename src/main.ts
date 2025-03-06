@@ -6,16 +6,16 @@ import 'rpg-awesome/css/rpg-awesome.min.css';
 import 'bulma/css/bulma.css';
 import {createPinia} from 'pinia';
 import {
-    faKey,
-    faUser,
-    faLock,
     faEye,
     faEyeSlash,
+    faGlobe,
+    faKey,
+    faLock,
     faRightToBracket,
-    faUserPlus,
     faUnlock,
-    faUsers,
-    faGlobe
+    faUser,
+    faUserPlus,
+    faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import {faClock as farClockRegular} from '@fortawesome/free-regular-svg-icons';
 import {faDiscord} from '@fortawesome/free-brands-svg-icons';
