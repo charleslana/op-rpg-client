@@ -1,3 +1,7 @@
+:root {
+    --bulma-arrow-color: #FAFAFA !important;
+}
+
 @font-face {
     font-family: 'Proxima Nova';
     src: url('@/assets/fonts/Proxima_Nova_Regular.woff2') format('woff2');

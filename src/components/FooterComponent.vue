@@ -6,7 +6,7 @@
           OPRPG
         </div>
         <div class="control level-item">
-          By DevNull - Mr.Robot
+          By DevNull
         </div>
         <p class="is-size-7">Copyright &copy; {{ new Date().getFullYear() }}</p>
       </div>

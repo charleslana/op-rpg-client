@@ -15,7 +15,10 @@ import {
     faUnlock,
     faUser,
     faUserPlus,
-    faUsers
+    faUsers,
+    faIdBadge,
+    faEnvelope,
+    faWater
 } from '@fortawesome/free-solid-svg-icons';
 import {faClock as farClockRegular} from '@fortawesome/free-regular-svg-icons';
 import {faDiscord} from '@fortawesome/free-brands-svg-icons';
@@ -34,7 +37,10 @@ library.add(
     faUserPlus,
     faUnlock,
     faUsers,
-    faGlobe
+    faGlobe,
+    faIdBadge,
+    faEnvelope,
+    faWater
 );
 
 const app = createApp(App);
