@@ -59,15 +59,15 @@
             </div>
           </form>
           <router-link class="button is-dark is-fullwidth mt-3" to="/register">
-          <span class="icon">
-            <font-awesome-icon :icon="['fa', 'user-plus']"/>
-          </span>
+            <span class="icon">
+              <font-awesome-icon :icon="['fa', 'user-plus']"/>
+            </span>
             <span>Cadastrar</span>
           </router-link>
           <router-link class="button is-dark is-fullwidth mt-3" to="/error">
-          <span class="icon">
-            <font-awesome-icon :icon="['fa', 'unlock']"/>
-          </span>
+            <span class="icon">
+              <font-awesome-icon :icon="['fa', 'unlock']"/>
+            </span>
             <span>Esqueci minha senha</span>
           </router-link>
         </div>

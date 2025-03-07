@@ -44,7 +44,7 @@
               <label class="label" for="email">Digite o e-mail</label>
               <div class="control has-icons-left has-icons-right">
                 <input id="email" v-model.trim="email" class="input is-shadowless" placeholder="E-mail" required
-                       type="text"/>
+                       type="email"/>
                 <span class="icon is-small is-left">
                   <font-awesome-icon :icon="['fa', 'envelope']"/>
                 </span>
@@ -54,8 +54,8 @@
               <label class="label" for="selectedFaction">Selecione a facção</label>
               <div class="control has-icons-left has-icons-right">
                 <div class="select is-borderless is-fullwidth">
-                  <select id="selectedFaction" v-model="selectedFaction" class="is-shadowless">
-                    <option :value=null disabled>Escolha sua facção</option>
+                  <select id="selectedFaction" v-model="selectedFaction" class="is-shadowless" required>
+                    <option disabled value="">Escolha sua facção</option>
                     <option value="pirate">Pirata</option>
                     <option value="marine">Marinha</option>
                     <option value="revolutionary">Revolucionário</option>
@@ -70,8 +70,8 @@
               <label class="label" for="selectedSea">Selecione o mar</label>
               <div class="control has-icons-left has-icons-right">
                 <div class="select is-borderless is-fullwidth">
-                  <select id="selectedSea" v-model="selectedSea" class="is-shadowless">
-                    <option :value=null disabled>Escolha o seu mar</option>
+                  <select id="selectedSea" v-model="selectedSea" class="is-shadowless" required>
+                    <option disabled value="">Escolha o seu mar</option>
                     <option value="north-blue">North Blue</option>
                     <option value="east-blue">East Blue</option>
                     <option value="south-blue">South Blue</option>
@@ -87,8 +87,8 @@
               <label class="label" for="selectedBreed">Selecione a raça</label>
               <div class="control has-icons-left has-icons-right">
                 <div class="select is-borderless is-fullwidth">
-                  <select id="selectedBreed" v-model="selectedBreed" class="is-shadowless">
-                    <option :value=null disabled>Escolha sua raça</option>
+                  <select id="selectedBreed" v-model="selectedBreed" class="is-shadowless" required>
+                    <option disabled value="">Escolha sua raça</option>
                     <option value="human">Humano</option>
                     <option value="dwarf">Anão</option>
                     <option value="giant">Gigante</option>
@@ -97,7 +97,23 @@
                   </select>
                 </div>
                 <span class="icon is-small is-left">
-                  <font-awesome-icon :icon="['fa', 'water']"/>
+                  <i class="ra ra-player"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="selectedClass">Selecione a classe</label>
+              <div class="control has-icons-left has-icons-right">
+                <div class="select is-borderless is-fullwidth">
+                  <select id="selectedClass" v-model="selectedClass" class="is-shadowless" required>
+                    <option disabled value="">Escolha sua classe</option>
+                    <option value="swordsman">Espadachim</option>
+                    <option value="shooter">Atirador</option>
+                    <option value="fighter">Lutador</option>
+                  </select>
+                </div>
+                <span class="icon is-small is-left">
+                  <i class="ra ra-archery-target"></i>
                 </span>
               </div>
             </div>
@@ -109,7 +125,21 @@
                 do OPRPG.
               </label>
             </div>
+            <div class="field">
+              <button :disabled="!isAcceptTerms" class="button is-link is-fullwidth" type="submit">
+              <span class="icon">
+                <font-awesome-icon :icon="['fa', 'user-plus']"/>
+              </span>
+                <span>Criar conta</span>
+              </button>
+            </div>
           </form>
+          <router-link class="button is-dark is-fullwidth mt-3" to="/">
+            <span class="icon">
+              <font-awesome-icon :icon="['fa', 'arrow-left']"/>
+            </span>
+            <span>Voltar ao login</span>
+          </router-link>
         </div>
       </div>
     </div>
@@ -120,17 +150,23 @@
 <script lang="ts" setup>
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
+import type {FactionType} from '@/types/faction-type.ts';
+import type {SeaType} from '@/types/sea-type.ts';
+import type {BreedType} from '@/types/breed-type.ts';
+import type {ClassType} from '@/types/class-type.ts';
 
 const user = ref('');
 const password = ref('');
 const passwordFieldType = ref<'password' | 'text'>('password');
 const nickname = ref('');
 const email = ref('');
-const selectedFaction = ref<string | null>(null);
+const selectedFaction = ref<FactionType | string>('');
 const termsAgreed = ref(false);
-const selectedSea = ref<string | null>(null);
-const selectedBreed = ref<string | null>(null);
+const selectedSea = ref<SeaType | string>('');
+const selectedBreed = ref<BreedType | string>('');
+const selectedClass = ref<ClassType | string>('');
+const isAcceptTerms = computed(() => termsAgreed.value);
 
 function togglePassword() {
   passwordFieldType.value = passwordFieldType.value === 'password' ? 'text' : 'password';

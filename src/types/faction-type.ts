@@ -1,0 +1,1 @@
+export type FactionType = 'pirate' | 'marine' | 'revolutionary';
