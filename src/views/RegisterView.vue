@@ -155,6 +155,7 @@ import type {FactionType} from '@/types/faction-type.ts';
 import type {SeaType} from '@/types/sea-type.ts';
 import type {BreedType} from '@/types/breed-type.ts';
 import type {ClassType} from '@/types/class-type.ts';
+import {showSuccessToast} from '@/utils/utils.ts';
 
 const user = ref('');
 const password = ref('');
@@ -173,7 +174,7 @@ function togglePassword() {
 }
 
 async function register() {
-  alert(user.value);
+  showSuccessToast('Cadastro realizado, redirecionado para sua conta...' + user.value);
 }
 </script>
 

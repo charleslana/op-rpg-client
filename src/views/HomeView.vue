@@ -110,6 +110,7 @@ import packageJson from '../../package.json';
 import {ref} from 'vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
+import {showErrorToast} from '@/utils/utils.ts';
 
 const appVersion = packageJson.version;
 
@@ -122,7 +123,7 @@ function togglePassword() {
 }
 
 async function login() {
-  alert(user.value);
+  showErrorToast(user.value);
 }
 </script>
 

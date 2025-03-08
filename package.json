@@ -20,6 +20,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.8.1",
     "bulma": "^1.0.3",
+    "bulma-toast": "^2.4.4",
     "pinia": "^3.0.1",
     "rpg-awesome": "^0.2.0",
     "vue": "^3.5.13",
