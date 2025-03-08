@@ -1,6 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import RegisterView from '@/views/RegisterView.vue';
+import RecoveryPasswordView from '@/views/RecoveryPasswordView.vue';
+import TOSView from '@/views/TOSView.vue';
+import RulesView from '@/views/RulesView.vue';
 
 const routes = [
     {
@@ -12,6 +15,21 @@ const routes = [
         path: '/register',
         name: 'register',
         component: RegisterView,
+    },
+    {
+        path: '/recovery-password',
+        name: 'recovery-password',
+        component: RecoveryPasswordView,
+    },
+    {
+        path: '/tos',
+        name: 'tos',
+        component: TOSView,
+    },
+    {
+        path: '/rules',
+        name: 'rules',
+        component: RulesView,
     },
     {
         path: '/:pathMatch(.*)*',

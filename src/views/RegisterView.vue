@@ -120,13 +120,19 @@
             <div class="field">
               <label class="checkbox">
                 <input v-model="termsAgreed" type="checkbox"/>
-                Declaro que li e concordo com as
+                Declaro que li e concordo com os
+                <router-link to="/tos">Termos de Serviço</router-link> e
                 <router-link to="/rules">Regras</router-link>
                 do OPRPG.
               </label>
             </div>
             <div class="field">
-              <button :disabled="!isAcceptTerms" class="button is-link is-fullwidth" type="submit">
+              <button
+                  :class="{'is-loading': isLoading}"
+                  :disabled="!isAcceptTerms"
+                  class="button is-link is-fullwidth"
+                  type="submit"
+              >
               <span class="icon">
                 <font-awesome-icon :icon="['fa', 'user-plus']"/>
               </span>
@@ -134,7 +140,7 @@
               </button>
             </div>
           </form>
-          <router-link class="button is-dark is-fullwidth mt-3" to="/">
+          <router-link :class="{'is-loading': isLoading}" class="button is-dark is-fullwidth mt-3" to="/">
             <span class="icon">
               <font-awesome-icon :icon="['fa', 'arrow-left']"/>
             </span>
@@ -167,6 +173,7 @@ const termsAgreed = ref(false);
 const selectedSea = ref<SeaType | string>('');
 const selectedBreed = ref<BreedType | string>('');
 const selectedClass = ref<ClassType | string>('');
+const isLoading = ref(false);
 const isAcceptTerms = computed(() => termsAgreed.value);
 
 function togglePassword() {
@@ -174,7 +181,11 @@ function togglePassword() {
 }
 
 async function register() {
-  showSuccessToast('Cadastro realizado, redirecionado para sua conta...' + user.value);
+  isLoading.value = true;
+  setTimeout(() => {
+    showSuccessToast('Cadastro realizado, redirecionado para sua conta...' + user.value);
+    isLoading.value = false;
+  }, 2000);
 }
 </script>
 

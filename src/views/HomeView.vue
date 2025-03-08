@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="field">
-              <button class="button is-link is-fullwidth" type="submit">
+              <button :class="{'is-loading': isLoading}" class="button is-link is-fullwidth" type="submit">
               <span class="icon">
                 <font-awesome-icon :icon="['fa', 'right-to-bracket']"/>
               </span>
@@ -58,13 +58,17 @@
               </button>
             </div>
           </form>
-          <router-link class="button is-dark is-fullwidth mt-3" to="/register">
+          <router-link :class="{'is-loading': isLoading}" class="button is-dark is-fullwidth mt-3" to="/register">
             <span class="icon">
               <font-awesome-icon :icon="['fa', 'user-plus']"/>
             </span>
             <span>Cadastrar</span>
           </router-link>
-          <router-link class="button is-dark is-fullwidth mt-3" to="/error">
+          <router-link
+              :class="{'is-loading': isLoading}"
+              class="button is-dark is-fullwidth mt-3"
+              to="/recovery-password"
+          >
             <span class="icon">
               <font-awesome-icon :icon="['fa', 'unlock']"/>
             </span>
@@ -117,13 +121,23 @@ const appVersion = packageJson.version;
 const user = ref('');
 const password = ref('');
 const passwordFieldType = ref<'password' | 'text'>('password');
+const isLoading = ref(false);
 
 function togglePassword() {
   passwordFieldType.value = passwordFieldType.value === 'password' ? 'text' : 'password';
 }
 
+function sleep(ms: number) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, ms);
+  });
+}
+
 async function login() {
+  isLoading.value = true;
+  await sleep(2000);
   showErrorToast(user.value);
+  isLoading.value = false;
 }
 </script>
 

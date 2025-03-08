@@ -4,22 +4,24 @@ import App from './App.vue';
 import router from './router';
 import 'rpg-awesome/css/rpg-awesome.min.css';
 import 'bulma/css/bulma.css';
+import './assets/libs/bulma-list.css';
 import {createPinia} from 'pinia';
 import {
+    faArrowLeft,
+    faEnvelope,
     faEye,
     faEyeSlash,
     faGlobe,
+    faIdBadge,
     faKey,
     faLock,
+    faPaperPlane,
     faRightToBracket,
     faUnlock,
     faUser,
     faUserPlus,
     faUsers,
-    faIdBadge,
-    faEnvelope,
-    faWater,
-    faArrowLeft
+    faWater
 } from '@fortawesome/free-solid-svg-icons';
 import {faClock as farClockRegular} from '@fortawesome/free-regular-svg-icons';
 import {faDiscord} from '@fortawesome/free-brands-svg-icons';
@@ -42,7 +44,8 @@ library.add(
     faIdBadge,
     faEnvelope,
     faWater,
-    faArrowLeft
+    faArrowLeft,
+    faPaperPlane
 );
 
 const app = createApp(App);

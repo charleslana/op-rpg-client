@@ -1,7 +1,9 @@
 <template>
   <div class="grid">
     <div class="cell">
-      <div class="cell is-size-1 has-text-weight-bold">OPRPG</div>
+      <div class="cell is-size-1 has-text-weight-bold">
+        <router-link class="logo" to="/">OPRPG</router-link>
+      </div>
       <div class="cell mt-5">
         Fan GAME brasileiro
         Embarque nessa aventura
@@ -26,5 +28,7 @@
 </script>
 
 <style scoped>
-
+.logo {
+  color: #FAFAFA;
+}
 </style>
