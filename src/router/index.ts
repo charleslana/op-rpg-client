@@ -13,41 +13,49 @@ const routes = [
         path: '/',
         name: 'home',
         component: HomeView,
+        meta: {title: getTitle('Aventuras sem limites')}
     },
     {
         path: '/register',
         name: 'register',
         component: RegisterView,
+        meta: {title: getTitle('Cadastro')}
     },
     {
         path: '/recovery-password',
         name: 'recovery-password',
         component: RecoveryPasswordView,
+        meta: {title: getTitle('Recuperar senha')}
     },
     {
         path: '/tos',
         name: 'tos',
         component: TOSView,
+        meta: {title: getTitle('Termos de serviço')}
     },
     {
         path: '/rules',
         name: 'rules',
         component: RulesView,
+        meta: {title: getTitle('Regras')}
     },
     {
         path: '/news-paper',
         name: 'news-paper',
         component: NewsPaperView,
+        meta: {title: getTitle('Jornal')}
     },
     {
         path: '/attributes',
         name: 'attributes',
         component: AttributesView,
+        meta: {title: getTitle('Atributos')}
     },
     {
         path: '/settings',
         name: 'settings',
         component: SettingsView,
+        meta: {title: getTitle('Configurações')}
     },
     {
         path: '/:pathMatch(.*)*',
@@ -65,6 +73,27 @@ const router = createRouter({
         }
         return {top: 0};
     }
+});
+
+interface RouteMeta {
+    title?: string;
+}
+
+function getTitle(title?: string): string {
+    if (title) {
+        return `OPRPG - ${title}`;
+    }
+    return 'OPRPG';
+}
+
+router.beforeEach((to, _from, next) => {
+    const meta = to.meta as RouteMeta;
+    if (meta && meta.title) {
+        document.title = meta.title;
+    } else {
+        document.title = getTitle();
+    }
+    next();
 });
 
 export default router;

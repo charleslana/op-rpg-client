@@ -31,7 +31,9 @@ import {
     faUserPlus,
     faUsers,
     faWater,
-    faRightFromBracket
+    faRightFromBracket,
+    faXmark,
+    faBars
 } from '@fortawesome/free-solid-svg-icons';
 import {faClock as farClockRegular} from '@fortawesome/free-regular-svg-icons';
 import {faDiscord} from '@fortawesome/free-brands-svg-icons';
@@ -65,7 +67,9 @@ library.add(
     faCoins,
     faDollarSign,
     faCrown,
-    faRightFromBracket
+    faRightFromBracket,
+    faXmark,
+    faBars
 );
 
 const app = createApp(App);

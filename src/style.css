@@ -30,6 +30,11 @@
     font-style: normal;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
 html {
     background-color: #222222 !important;
     height: 100vh;
@@ -78,4 +83,9 @@ body {
 
 .is-white:hover {
     opacity: 0.8;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }

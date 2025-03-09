@@ -2,6 +2,7 @@
   <div class="layout">
     <div class="container pt-5 px-5">
       <HeaderComponent/>
+      <NavBarComponent :items="menuItems"/>
       <div class="columns is-multiline">
         <div class="column is-4 is-full-mobile">
           <div class="card is-shadowless">
@@ -31,7 +32,7 @@
               </button>
             </div>
           </div>
-          <div class="card is-shadowless expanded-card">
+          <div class="card is-shadowless expanded-card is-hidden-mobile">
             <div class="card-content">
               <router-link v-for="(menu, index) in menuItems" :key="index" :to="menu.action" class="is-fullwidth">
                 <div :class="['menu-info', { 'mt-4': index > 0 }]">
@@ -47,12 +48,12 @@
             </div>
           </div>
         </div>
-        <div class="column is-8 is-full-mobile">
+        <div id="content" class="column is-8 is-full-mobile">
           <div class="card is-shadowless expanded-card">
             <div class="card-content">
               <div class="content-title mb-5">
                 <div class="title-circle"></div>
-                <p class="title is-size-3">{{ title }}</p>
+                <p class="title is-size-3">{{ props.title }}</p>
               </div>
               <slot name="content"></slot>
             </div>
@@ -73,6 +74,7 @@ import {useRouter} from 'vue-router';
 import newspaperIcon from '@/assets/menus/newspaper.png';
 import attributesIcon from '@/assets/menus/attributes.png';
 import settingsIcon from '@/assets/menus/settings.jpg';
+import NavBarComponent from '@/components/NavBarComponent.vue';
 
 interface Card {
   icon: string[];
@@ -94,8 +96,9 @@ interface MenuItem {
   subtitle: string;
 }
 
-defineProps<{
+const props = defineProps<{
   title: string;
+  scrollToContent?: boolean
 }>();
 
 const frame = ref('');
@@ -181,6 +184,7 @@ onMounted(async () => {
   cards.value[1].text = 'Você possui 100 pontos para distribuir!';
   cards.value[2].text = 'Você possui 1 nova(s) notícia(s) não lida(s)!';
   cards.value[2].isHidden = false;
+  scrollToContent();
 });
 
 const visibleCards = computed(() => {
@@ -194,6 +198,27 @@ function goPage(page: string) {
 function logout() {
   goPage('/');
 }
+
+function isMobile(): boolean {
+  return window.innerWidth <= 768;
+}
+
+function scrollToContent() {
+  const contentElement = document.getElementById('content');
+  if (contentElement && props.scrollToContent && isMobile()) {
+    contentElement.scrollIntoView({behavior: 'smooth'});
+  }
+}
+
+const duplicateMenuItems = (times: number) => {
+  const newMenuItems = [];
+  for (let i = 0; i < times; i++) {
+    newMenuItems.push(...menuItems.value);
+  }
+  menuItems.value = newMenuItems;
+};
+
+duplicateMenuItems(30);
 </script>
 
 <style scoped>

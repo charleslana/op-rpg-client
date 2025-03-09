@@ -1,5 +1,5 @@
 <template>
-  <LayoutComponent title="Configurações">
+  <LayoutComponent title="Configurações" :scroll-to-content="true">
     <template #content>
       <ContentComponent title="Informações Gerais">
         <template #content>
