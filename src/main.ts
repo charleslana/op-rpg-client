@@ -8,13 +8,16 @@ import './assets/libs/bulma-list.css';
 import {createPinia} from 'pinia';
 import {
     faArrowLeft,
+    faCirclePlus,
     faEnvelope,
     faEye,
     faEyeSlash,
+    faGift,
     faGlobe,
     faIdBadge,
     faKey,
     faLock,
+    faNewspaper,
     faPaperPlane,
     faRightToBracket,
     faUnlock,
@@ -45,7 +48,10 @@ library.add(
     faEnvelope,
     faWater,
     faArrowLeft,
-    faPaperPlane
+    faPaperPlane,
+    faGift,
+    faCirclePlus,
+    faNewspaper
 );
 
 const app = createApp(App);

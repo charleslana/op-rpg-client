@@ -11,6 +11,13 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: url('@/assets/fonts/Proxima_Nova_Semibold.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
     src: url('@/assets/fonts/Proxima_Nova_Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
