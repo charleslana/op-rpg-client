@@ -5,6 +5,8 @@ import RecoveryPasswordView from '@/views/RecoveryPasswordView.vue';
 import TOSView from '@/views/TOSView.vue';
 import RulesView from '@/views/RulesView.vue';
 import NewsPaperView from '@/views/NewsPaperView.vue';
+import AttributesView from '@/views/AttributesView.vue';
+import SettingsView from '@/views/SettingsView.vue';
 
 const routes = [
     {
@@ -38,6 +40,16 @@ const routes = [
         component: NewsPaperView,
     },
     {
+        path: '/attributes',
+        name: 'attributes',
+        component: AttributesView,
+    },
+    {
+        path: '/settings',
+        name: 'settings',
+        component: SettingsView,
+    },
+    {
         path: '/:pathMatch(.*)*',
         name: 'not-found',
         component: () => import('@/views/NotFoundView.vue'),
@@ -47,6 +59,12 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(_to, _from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        }
+        return {top: 0};
+    }
 });
 
 export default router;

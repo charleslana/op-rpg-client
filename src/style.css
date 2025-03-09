@@ -23,6 +23,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('@/assets/fonts/Space_Grotesk_Regular.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+}
+
 html {
     background-color: #222222 !important;
     height: 100vh;

@@ -1,11 +1,9 @@
 <template>
-  <LayoutComponent title="Jornal">
+  <LayoutComponent title="Configurações">
     <template #content>
-      <ContentComponent title="Últimas Notícias">
+      <ContentComponent title="Informações Gerais">
         <template #content>
-          <h1 v-for="n in 100" :key="n">
-            Contador: {{ n }}
-          </h1>
+          <p>Content</p>
         </template>
       </ContentComponent>
     </template>
