@@ -8,7 +8,12 @@ import './assets/libs/bulma-list.css';
 import {createPinia} from 'pinia';
 import {
     faArrowLeft,
+    faArrowUp,
+    faBatteryFull,
     faCirclePlus,
+    faCoins,
+    faCrown,
+    faDollarSign,
     faEnvelope,
     faEye,
     faEyeSlash,
@@ -20,11 +25,13 @@ import {
     faNewspaper,
     faPaperPlane,
     faRightToBracket,
+    faStar,
     faUnlock,
     faUser,
     faUserPlus,
     faUsers,
-    faWater
+    faWater,
+    faRightFromBracket
 } from '@fortawesome/free-solid-svg-icons';
 import {faClock as farClockRegular} from '@fortawesome/free-regular-svg-icons';
 import {faDiscord} from '@fortawesome/free-brands-svg-icons';
@@ -51,7 +58,14 @@ library.add(
     faPaperPlane,
     faGift,
     faCirclePlus,
-    faNewspaper
+    faNewspaper,
+    faArrowUp,
+    faStar,
+    faBatteryFull,
+    faCoins,
+    faDollarSign,
+    faCrown,
+    faRightFromBracket
 );
 
 const app = createApp(App);

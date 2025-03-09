@@ -64,3 +64,11 @@ body {
 .notification {
     padding: 1.25rem 3.2rem 1.25rem 1.5rem !important;
 }
+
+.is-white {
+    transition: all 0.3s ease;
+}
+
+.is-white:hover {
+    opacity: 0.8;
+}

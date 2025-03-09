@@ -11,11 +11,24 @@
               </div>
               <p class="title is-size-3 has-text-centered my-4">nickname</p>
               <div v-for="(card, index) in visibleCards" :key="index" class="card-info" @click="goPage(card.action)">
-                <div class="mr-2">
+                <div>
                   <font-awesome-icon :icon="card.icon"/>
                 </div>
                 <div>{{ card.text }}</div>
               </div>
+              <div v-for="(item, index) in infoItems" :key="index" class="text-info">
+                <div>
+                  <font-awesome-icon :icon="item.icon"/>
+                </div>
+                <div>{{ item.text }}</div>
+                <div>{{ item.value }}</div>
+              </div>
+              <button class="button is-white is-fullwidth" @click="logout">
+              <span class="icon">
+                <font-awesome-icon :icon="['fa', 'right-from-bracket']"/>
+              </span>
+                <span>Sair</span>
+              </button>
             </div>
           </div>
         </div>
@@ -46,6 +59,12 @@ interface Card {
   isHidden: boolean;
 }
 
+interface InfoItem {
+  icon: string[];
+  text: string;
+  value: string | number;
+}
+
 const frame = ref('');
 const cards = ref<Card[]>([
   {
@@ -67,6 +86,39 @@ const cards = ref<Card[]>([
     isHidden: false,
   }
 ]);
+const infoItems = ref<InfoItem[]>([
+  {
+    icon: ['fa', 'arrow-up'],
+    text: 'Nível:',
+    value: '1',
+  },
+  {
+    icon: ['fa', 'star'],
+    text: 'Exp:',
+    value: '0 / 100',
+  },
+  {
+    icon: ['fa', 'battery-full'],
+    text: 'Stamina:',
+    value: '1000 / 1000',
+  },
+  {
+    icon: ['fa', 'coins'],
+    text: 'Berries:',
+    value: '1000',
+  },
+  {
+    icon: ['fa', 'dollar-sign'],
+    text: 'Créditos:',
+    value: '0',
+  },
+  {
+    icon: ['fa', 'crown'],
+    text: 'Vip até:',
+    value: 'Não é VIP',
+  },
+]);
+
 const router = useRouter();
 
 onMounted(async () => {
@@ -83,6 +135,10 @@ const visibleCards = computed(() => {
 
 function goPage(page: string) {
   router.push(page);
+}
+
+function logout() {
+  goPage('/');
 }
 </script>
 
@@ -122,11 +178,29 @@ function goPage(page: string) {
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   display: flex;
+  gap: 10px;
 }
 
 .card-info:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   color: #000 !important;
+}
+
+.text-info {
+  border-radius: 9px;
+  font-size: 13px;
+  padding: 5px 10px;
+  background: #222222;
+  color: #fff;
+  margin-top: -11px;
+  display: flex;
+  margin-bottom: 15px;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.is-white {
+  border-radius: 11px;
 }
 </style>
