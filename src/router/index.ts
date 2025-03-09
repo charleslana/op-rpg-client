@@ -4,6 +4,7 @@ import RegisterView from '@/views/RegisterView.vue';
 import RecoveryPasswordView from '@/views/RecoveryPasswordView.vue';
 import TOSView from '@/views/TOSView.vue';
 import RulesView from '@/views/RulesView.vue';
+import NewsPaperView from '@/views/NewsPaperView.vue';
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: '/rules',
         name: 'rules',
         component: RulesView,
+    },
+    {
+        path: '/news-paper',
+        name: 'news-paper',
+        component: NewsPaperView,
     },
     {
         path: '/:pathMatch(.*)*',
