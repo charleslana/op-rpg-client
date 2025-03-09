@@ -43,8 +43,9 @@
             <div class="field">
               <label class="label" for="email">Digite o e-mail</label>
               <div class="control has-icons-left has-icons-right">
-                <input id="email" v-model.trim="email" class="input is-shadowless" placeholder="E-mail" required
-                       type="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+                <input id="email" v-model.trim="email" autocomplete="email" class="input is-shadowless"
+                       placeholder="E-mail" required
+                       type="email"/>
                 <span class="icon is-small is-left">
                   <font-awesome-icon :icon="['fa', 'envelope']"/>
                 </span>
@@ -52,18 +53,19 @@
               <p v-if="!isValidEmail && email" class="help is-danger">E-mail inválido.</p>
             </div>
             <div class="field">
-              <label class="label" for="selectedFaction">Selecione a facção</label>
+              <div class="label">Selecione a facção</div>
               <div class="control">
-                <label class="radio mr-2">
-                  <input v-model="selectedFaction" required type="radio" value="pirate"/>
+                <label class="radio mr-2" for="faction-pirate">
+                  <input id="faction-pirate" v-model="selectedFaction" required type="radio" value="pirate"/>
                   Pirata
                 </label>
-                <label class="radio mr-2">
-                  <input v-model="selectedFaction" required type="radio" value="marine"/>
+                <label class="radio mr-2" for="faction-marine">
+                  <input id="faction-marine" v-model="selectedFaction" required type="radio" value="marine"/>
                   Marinha
                 </label>
-                <label class="radio mr-2">
-                  <input v-model="selectedFaction" required type="radio" value="revolutionary"/>
+                <label class="radio mr-2" for="faction-revolutionary">
+                  <input id="faction-revolutionary" v-model="selectedFaction" required type="radio"
+                         value="revolutionary"/>
                   Revolucionário
                 </label>
               </div>
@@ -122,7 +124,7 @@
             </div>
             <div class="field">
               <label class="checkbox">
-                <input v-model="termsAgreed" type="checkbox"/>
+                <input id="termsAgreed" v-model="termsAgreed" type="checkbox"/>
                 Declaro que li e concordo com os
                 <router-link to="/tos">Termos de Serviço</router-link>
                 e
