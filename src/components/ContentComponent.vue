@@ -1,19 +1,23 @@
 <template>
   <div class="content-wrapper">
-    <div class="title-button mb-5">
+    <div class="title-button mb-5" @click="isHidden = !isHidden">
       <div>{{ title }}</div>
       <div class="title-circle"></div>
     </div>
-    <div class="content-info">
+    <div v-if="!isHidden" class="content-info">
       <slot name="content"></slot>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import {ref} from 'vue';
+
 defineProps<{
   title: string;
 }>();
+
+const isHidden = ref(false);
 </script>
 
 <style scoped>

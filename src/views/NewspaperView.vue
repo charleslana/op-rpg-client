@@ -5,9 +5,11 @@
         <template #content>
           <div v-for="news in truncatedSubtitles" :key="news.id" class="card">
             <div class="card-content">
-              <div class="content">
-                <img :src="news.image" alt="newspaper" class="newspaper">
-                <div>
+              <div class="columns is-vcentered is-flex-direction-column-mobile">
+                <div class="column is-3 has-text-centered-mobile">
+                  <img :src="news.image" alt="newspaper" class="newspaper">
+                </div>
+                <div class="column has-text-centered-mobile">
                   <div class="newspaper-title">{{ news.title }}</div>
                   <div class="newspaper-subtitle">{{ news.subtitle }}</div>
                   <div>
