@@ -116,7 +116,7 @@ const cards = ref<Card[]>([
   {
     icon: ['fa', 'newspaper'],
     text: 'Você possui -- nova(s) notícia(s) não lida(s)!',
-    action: '/news-paper',
+    action: '/newspaper',
     isHidden: false,
   }
 ]);
@@ -155,7 +155,7 @@ const infoItems = ref<InfoItem[]>([
 
 const menuItems = ref<MenuItem[]>([
   {
-    action: '/news-paper',
+    action: '/newspaper',
     icon: newspaperIcon,
     title: 'Jornal',
     subtitle: 'Veja as últimas notícias',

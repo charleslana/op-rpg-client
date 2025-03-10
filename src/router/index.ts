@@ -4,9 +4,10 @@ import RegisterView from '@/views/RegisterView.vue';
 import RecoveryPasswordView from '@/views/RecoveryPasswordView.vue';
 import TOSView from '@/views/TOSView.vue';
 import RulesView from '@/views/RulesView.vue';
-import NewsPaperView from '@/views/NewsPaperView.vue';
+import NewsPaperView from '@/views/NewspaperView.vue';
 import AttributesView from '@/views/AttributesView.vue';
 import SettingsView from '@/views/SettingsView.vue';
+import NewspaperDetailsView from '@/views/NewspaperDetailsView.vue';
 
 const routes = [
     {
@@ -40,9 +41,15 @@ const routes = [
         meta: {title: getTitle('Regras')}
     },
     {
-        path: '/news-paper',
-        name: 'news-paper',
+        path: '/newspaper',
+        name: 'newspaper',
         component: NewsPaperView,
+        meta: {title: getTitle('Jornal')}
+    },
+    {
+        path: '/newspaper/:uuid',
+        name: 'newspaper-details',
+        component: NewspaperDetailsView,
         meta: {title: getTitle('Jornal')}
     },
     {
