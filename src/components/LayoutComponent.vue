@@ -8,7 +8,7 @@
           <div class="card is-shadowless">
             <div class="card-content avatar-frame">
               <div :style="{ backgroundImage: `url(${frame})` }" class="frame mx-auto">
-                <img alt="avatar" class="avatar" src="@/assets/avatars/default.gif">
+                <img alt="avatar" class="avatar" src="@/assets/images/avatars/default.gif">
               </div>
               <p class="title is-size-3 has-text-centered mx-auto my-4">nickname</p>
               <div v-for="(card, index) in visibleCards" :key="index" class="card-info" @click="goPage(card.action)">
@@ -25,9 +25,7 @@
                 <div>{{ item.value }}</div>
               </div>
               <button class="button is-white is-fullwidth" @click="logout">
-              <span class="icon">
-                <font-awesome-icon :icon="['fa', 'right-from-bracket']"/>
-              </span>
+                <span class="icon"><font-awesome-icon :icon="['fa', 'right-from-bracket']"/></span>
                 <span>Sair</span>
               </button>
             </div>
@@ -71,9 +69,9 @@ import FooterComponent from '@/components/FooterComponent.vue';
 import {getFrame} from '@/utils/frame-utils.ts';
 import {computed, onMounted, ref} from 'vue';
 import {useRouter} from 'vue-router';
-import newspaperIcon from '@/assets/menus/newspaper.png';
-import attributesIcon from '@/assets/menus/attributes.png';
-import settingsIcon from '@/assets/menus/settings.jpg';
+import newspaperIcon from '@/assets/images/menus/newspaper.png';
+import attributesIcon from '@/assets/images/menus/attributes.png';
+import settingsIcon from '@/assets/images/menus/settings.jpg';
 import NavBarComponent from '@/components/NavBarComponent.vue';
 
 interface Card {
