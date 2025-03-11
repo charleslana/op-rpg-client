@@ -84,13 +84,6 @@ const truncatedSubtitles = computed(() =>
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
 
-.card .content {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
 .newspaper {
   width: 90px;
   height: 90px;

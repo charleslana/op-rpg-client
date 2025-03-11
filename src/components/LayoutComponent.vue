@@ -59,6 +59,7 @@
         </div>
       </div>
     </div>
+    <GoToTopComponent/>
     <FooterComponent/>
   </div>
 </template>
@@ -73,6 +74,7 @@ import newspaperIcon from '@/assets/images/menus/newspaper.png';
 import attributesIcon from '@/assets/images/menus/attributes.png';
 import settingsIcon from '@/assets/images/menus/settings.jpg';
 import NavBarComponent from '@/components/NavBarComponent.vue';
+import GoToTopComponent from '@/components/GoToTopComponent.vue';
 
 interface Card {
   icon: string[];

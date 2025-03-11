@@ -8,7 +8,9 @@ import './assets/libs/bulma-list.css';
 import {createPinia} from 'pinia';
 import {
     faArrowLeft,
+    faArrowRight,
     faArrowUp,
+    faBars,
     faBatteryFull,
     faCirclePlus,
     faCoins,
@@ -24,6 +26,7 @@ import {
     faLock,
     faNewspaper,
     faPaperPlane,
+    faRightFromBracket,
     faRightToBracket,
     faStar,
     faUnlock,
@@ -31,10 +34,7 @@ import {
     faUserPlus,
     faUsers,
     faWater,
-    faRightFromBracket,
-    faXmark,
-    faBars,
-    faArrowRight,
+    faXmark
 } from '@fortawesome/free-solid-svg-icons';
 import {faClock as farClockRegular} from '@fortawesome/free-regular-svg-icons';
 import {faDiscord} from '@fortawesome/free-brands-svg-icons';
