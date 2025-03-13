@@ -12,6 +12,8 @@ import {
     faArrowUp,
     faBars,
     faBatteryFull,
+    faBolt,
+    faBullhorn,
     faCirclePlus,
     faCoins,
     faCrown,
@@ -21,13 +23,18 @@ import {
     faEyeSlash,
     faGift,
     faGlobe,
+    faHandFist,
+    faHeart,
     faIdBadge,
     faKey,
     faLock,
     faNewspaper,
     faPaperPlane,
+    faQuestion,
     faRightFromBracket,
     faRightToBracket,
+    faRunning,
+    faShieldAlt,
     faStar,
     faUnlock,
     faUser,
@@ -71,7 +78,14 @@ library.add(
     faRightFromBracket,
     faXmark,
     faBars,
-    faArrowRight
+    faArrowRight,
+    faBullhorn,
+    faQuestion,
+    faHeart,
+    faBolt,
+    faHandFist,
+    faShieldAlt,
+    faRunning
 );
 
 const app = createApp(App);
